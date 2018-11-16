@@ -10,14 +10,18 @@ import { Project } from '../interfaces/project';
 })
 export class PortfolioComponent implements OnInit {
 
-  projects: Observable<Project>;
+  projects: Array<Project>;
 
   constructor(
     private db: DatabaseService,
   ) { }
 
   ngOnInit() {
-    this.projects = this.db.projects;
+    
+    this.db.getProjects().subscribe((projects) => {
+      this.projects = projects;
+    });
+    
   }
 
 }
