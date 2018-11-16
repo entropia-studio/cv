@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+/*@import "~@angular/material/prebuilt-themes/indigo-pink.css";*/
+
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$primary: mat-palette($mat-pink);
+$accent: mat-palette($mat-pink, A200, A100, A400);
+$warn: mat-palette($mat-red);
+
+$theme: mat-light-theme($primary, $accent, $warn);
+
+// Set custom background color
+$custom-background-color: map_get($mat-blue-grey, 600);
+
+$background: map-get($theme, 'background');
+$background: map_merge($background, ('background': $custom-background-color));
+$theme: map_merge($theme, ('background': $background));
+
+@include angular-material-theme($theme);
+
+// Our dark theme
+.dark-theme {
+    color: $light-primary-text;
+    $dark-primary: mat-palette($mat-indigo);
+    $dark-accent: mat-palette($mat-pink, A400, A100, A700);
+    $dark-warn: mat-palette($mat-red);
+    $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+    // Set custom background color
+    $dark-custom-background-color: map_get($mat-grey, 50);
+    
+    $dark-background: map-get($dark-theme, 'background');
+    $dark-background: map_merge($dark-background, ('background': $dark-custom-background-color));
+    $dark-theme: map_merge($dark-theme, ('background': $dark-background));
+
+    @include angular-material-theme($dark-theme);
+}
+
+body{
+    margin: 0px;    
+}
+
+html,
+body {
+	height: 100%;
+}
