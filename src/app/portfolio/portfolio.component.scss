@@ -1,9 +1,17 @@
+.type{
+  display: flex;
+  justify-content: flex-end;
+  margin: 1em;
+  
+}
+
 .container{
-    width: 99%;
+    width: 100%;
     display: flex;    
     justify-content: center;    
-    margin: 0 auto;
+    margin: 1em auto;    
   }
+
   .masonry {
       -moz-column-count: 5;
       -webkit-column-count: 5;

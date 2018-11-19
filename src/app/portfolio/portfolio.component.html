@@ -1,8 +1,11 @@
-<mat-chip-list>     
-    <mat-chip color="primary" selected>Back end</mat-chip>
-    <mat-chip color="accent" selected>Front end</mat-chip>
-</mat-chip-list>  
-<div class="container" *ngIf="projects">      
+<div class="type">
+    <mat-chip-list>     
+        <mat-chip color="primary" selected (click)="filterByType('Back end')">Back end</mat-chip>
+        <mat-chip color="warn" (click)="filterByType('Front end')" selected>Front end</mat-chip>
+    </mat-chip-list>  
+</div>     
+<div class="container" *ngIf="projects"> 
+  
   <div class="brick" *ngFor="let project of projects">
     <mat-card class="example-card" >
       <mat-card-header>      

@@ -11,6 +11,7 @@ import { Project } from '../interfaces/project';
 export class PortfolioComponent implements OnInit {
 
   projects: Array<Project>;
+  projectsBackup: Array<Project>;
 
   constructor(
     private db: DatabaseService,
@@ -20,8 +21,18 @@ export class PortfolioComponent implements OnInit {
     
     this.db.getProjects().subscribe((projects) => {
       this.projects = projects;
-    });
-    
+      this.projectsBackup = projects;
+    });    
+  }
+
+  filterByType(type:string){
+    var mProjects: Project[] = [];
+    this.projectsBackup.forEach(project => {
+      if (project.type.indexOf(type) !== -1){
+        mProjects.push(project);
+      }
+    })
+    this.projects = mProjects;
   }
 
 }
