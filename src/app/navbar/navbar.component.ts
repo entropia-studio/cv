@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 import { ThemeService } from '../services/theme.service';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { LangService } from '../services/lang.service';
 
 
 @Component({
@@ -8,20 +9,35 @@ import { Observable } from 'rxjs';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, AfterContentInit {
 
   isDarkTheme: Observable<boolean>;
+  language: string;
 
   constructor(
     private themeService: ThemeService,
-  ) { }
+    private langService: LangService
+  ) {
+    
+  }
 
   ngOnInit() {
-    this.isDarkTheme = this.themeService.isDarkTheme;
+    this.isDarkTheme = this.themeService.isDarkTheme;    
+    this.langService.currentLanguage.subscribe(lang => {
+      this.language = lang;
+    })
   }
+
+  ngAfterContentInit(){
+    this.langService.setLanguage('esp');
+  } 
 
   toggleDarkTheme(checked: boolean) {
     this.themeService.setDarkTheme(checked);
+  }
+
+  setLanguage(lang: string){
+    this.langService.setLanguage(lang);
   }
 
 }

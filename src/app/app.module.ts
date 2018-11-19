@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule }    from '@angular/common/http';
 
+// Services
+import { LangService } from './services/lang.service';
+
 
 // Material
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -35,7 +38,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     MatIconModule,
     MatChipsModule
   ],
-  providers: [],
+  providers: [LangService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

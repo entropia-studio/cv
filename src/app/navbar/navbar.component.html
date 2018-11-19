@@ -1,14 +1,16 @@
-  <mat-toolbar color="primary">
+  <mat-toolbar color="primary" *ngIf="language">
     <img src="../../assets/javier.jpeg">    
     <!-- This fills the remaining space of the current row -->
     <span class="fill-remaining-space"></span>
     <div class="m-button-row">
-      <button mat-button color="link">Trabajos</button>    
-      <button mat-button>Sobre mí</button>    
-      <button mat-button>Contacto</button>                    
+      <button mat-button color="link">{{langService.getTag('portfolio',language)}}</button>    
+      <button mat-button>{{langService.getTag('about',language)}}</button>    
+      <button mat-button>{{langService.getTag('contact',language)}}</button>   
+      <button mat-button (click)="setLanguage('esp')" >ESP</button>    
+      <button mat-button (click)="setLanguage('eng')">ENG</button>                
     </div>
     <button mat-mini-fab style="background: rgb(233, 30, 99);" (click)="toggleDarkTheme(false)"></button>       
     <button mat-mini-fab style="background: rgb(63, 81, 181);" (click)="toggleDarkTheme(true)"></button>  
-  </mat-toolbar>
+  </mat-toolbar>          
 
   
