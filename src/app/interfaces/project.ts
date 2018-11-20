@@ -1,8 +1,9 @@
 export interface Project {
+    _id: string;
     name: Language[];
     description: Language[];
-    tecnologies: Array<string>;
-    type: Array<string>; //Backend, Frontend    
+    technologies: Array<string>;
+    types: Array<string>; //Backend, Frontend    
     url: string;
     url_code?: string;
 }
