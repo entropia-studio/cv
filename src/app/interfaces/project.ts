@@ -9,6 +9,6 @@ export interface Project {
 }
 
 interface Language{
-    name: string;
+    lang: string;
     text: string;
 }

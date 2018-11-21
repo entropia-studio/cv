@@ -6,7 +6,7 @@
         [color]="type.color">
         {{type.name}}
       </mat-chip>                
-    </mat-chip-list>  
+    </mat-chip-list>      
 </div>
 <div class="type">
   <mat-chip-list multiple>     
@@ -21,21 +21,13 @@
 <div class="container" *ngIf="projects"> 
   
   <div class="brick" *ngFor="let project of projects">
-    <mat-card class="example-card" >
-      <mat-card-header>      
-        <mat-card-title>{{project.name[0].text}}</mat-card-title>      
-      </mat-card-header>    
-      <mat-card-content>
-        <p>
-          {{project.name[0].text}}        
-        </p>
-        <h5>Proyecto: {{project.type}}</h5>
-        <h5>Tecnologías: {{project.technologies}}</h5>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-      </mat-card-actions>
+    <mat-card class="example-card" >      
+      <mat-card-content>        
+        <h4>{{project.name[0].text}}</h4>
+        <span class="center"><img src="../assets/{{project._id}}.png"></span>
+        <li><strong>{{langService.getTag('project',language)}}</strong>: {{project.types}}</li>
+        <li><strong>{{langService.getTag('technologies',language)}}</strong>: {{project.technologies}}</li>        
+      </mat-card-content>      
     </mat-card>  
   </div>  
 </div>
