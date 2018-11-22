@@ -1,0 +1,31 @@
+
+@import '~@angular/material/theming';
+
+.hr-theme {
+  display: flex;
+  justify-content: center;
+  
+  .hr-line {
+    width: 8em;
+    position: relative;
+    margin: 15px;
+    border-bottom: 5px solid ;
+    border-color: $dark-secondary-text;
+  }
+  .hr-icon {
+    position: relative;
+    top: 3px;
+    color: $dark-secondary-text;    
+  }
+  .dark-text-border{
+    border-color: $light-primary-text !important;
+  }
+  .dark-icon{
+    color: $light-primary-text !important;
+  }
+  i{
+    font-size: 2.5em;
+  }  
+
+}
+

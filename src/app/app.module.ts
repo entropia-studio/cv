@@ -19,12 +19,14 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import {MatChipsModule} from '@angular/material/chips';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { HrComponent } from './hr/hr.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    HrComponent
   ],
   imports: [
     BrowserModule,
