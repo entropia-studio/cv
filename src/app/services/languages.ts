@@ -9,6 +9,7 @@ export class Languages {
             {tag: 'contact',lang: [{name: 'esp',text: 'contacto'},{name: 'eng',text: 'contact'}]},
             {tag: 'project',lang: [{name: 'esp',text: 'proyecto'},{name: 'eng',text: 'project'}]},
             {tag: 'technologies',lang: [{name: 'esp',text: 'tecnologías'},{name: 'eng',text: 'technologies'}]},
+            {tag: 'technology',lang: [{name: 'esp',text: 'tecnología'},{name: 'eng',text: 'technology'}]},
           ];
     }
 }

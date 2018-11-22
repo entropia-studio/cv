@@ -1,7 +1,26 @@
+
+@import '~@angular/material/theming';
+
 .type{
-  display: flex;
-  justify-content: flex-end;
+  display: flex;    
+  flex-wrap: wrap;
+  align-content: center;
   margin: 1em;  
+  h3{    
+    text-transform: capitalize; 
+    width: 85px;    
+    color: $dark-secondary-text;
+  }  
+
+  hr{
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+}
+
+.mat-chip-list{
+  display: flex;
+  align-content: center;
 }
 
 li{

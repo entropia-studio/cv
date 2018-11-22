@@ -5,35 +5,37 @@
 
 @include mat-core();
 
-$primary: mat-palette($mat-pink);
-$accent: mat-palette($mat-pink, A200, A100, A400);
+$primary: mat-palette($mat-indigo);
+$accent: mat-palette($mat-pink, A400, A100, A700);
 $warn: mat-palette($mat-red);
 
 $theme: mat-light-theme($primary, $accent, $warn);
 
 // Set custom background color
-$custom-background-color: map_get($mat-blue-grey, 600);
+$custom-background-color: map_get($mat-blue-grey, 50);
 
 $background: map-get($theme, 'background');
 $background: map_merge($background, ('background': $custom-background-color));
 $theme: map_merge($theme, ('background': $background));
 
+
 @include angular-material-theme($theme);
+
 
 // Our dark theme
 .dark-theme {
     color: $light-primary-text;
-    $dark-primary: mat-palette($mat-indigo);
-    $dark-accent: mat-palette($mat-pink, A400, A100, A700);
+    $dark-primary: mat-palette($mat-pink);
+    $dark-accent: mat-palette($mat-indigo, A400, A100, A700);
     $dark-warn: mat-palette($mat-red);
     $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 
     // Set custom background color
-    $dark-custom-background-color: map_get($mat-grey, 50);
+    $dark-custom-background-color: map_get($mat-grey, 600);
     
     $dark-background: map-get($dark-theme, 'background');
     $dark-background: map_merge($dark-background, ('background': $dark-custom-background-color));
-    $dark-theme: map_merge($dark-theme, ('background': $dark-background));
+    $dark-theme: map_merge($dark-theme, ('background': $dark-background));    
 
     @include angular-material-theme($dark-theme);
 }
@@ -46,3 +48,8 @@ html,
 body {
 	height: 100%;
 }
+
+.dark-text-color{  
+    color: $light-primary-text !important;
+}
+

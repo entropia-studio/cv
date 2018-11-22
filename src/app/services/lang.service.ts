@@ -11,7 +11,6 @@ export class LangService {
   languages = new Languages();
 
   
-  //public _language: Subject<string> = new Subject<string>();
   public _language = new BehaviorSubject('esp');
   currentLanguage = this._language.asObservable();
 

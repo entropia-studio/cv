@@ -1,5 +1,7 @@
 <div class="type">
-    <mat-chip-list multiple>     
+   <h3 [ngClass]="{'dark-text-color': isDarkTheme | async}">{{langService.getTag('project',language)}}</h3>          
+   <hr/>
+   <mat-chip-list multiple>     
       <mat-chip *ngFor="let type of types;let i = index" 
         (click)="filterByType(i)"
         [selected]="type.selected"
@@ -9,6 +11,8 @@
     </mat-chip-list>      
 </div>
 <div class="type">
+  <h3 [ngClass]="{'dark-text-color': isDarkTheme | async}">{{langService.getTag('technology',language)}}</h3> 
+  <hr/>
   <mat-chip-list multiple>     
     <mat-chip *ngFor="let technology of technologies;let i = index" 
       (click)="filterByTechnology(i)"

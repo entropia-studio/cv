@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DatabaseService } from '../services/database.service';
 import { LangService } from '../services/lang.service';
 import { Project } from '../interfaces/project';
+import { Observable } from 'rxjs';
+import { ThemeService } from '../services/theme.service';
 
 interface Chip{
   name: string;
@@ -16,6 +18,8 @@ interface Chip{
 })
 export class PortfolioComponent implements OnInit {
 
+  isDarkTheme: Observable<boolean>;
+
   projects: Array<Project>;
   projectsBackup: Array<Project>;  
   language: string;
@@ -24,20 +28,23 @@ export class PortfolioComponent implements OnInit {
 
   constructor(
     private db: DatabaseService,
-    private langService: LangService
+    private langService: LangService,
+    private themeService: ThemeService,
   ) {}
 
   ngOnInit() {
+    this.isDarkTheme = this.themeService.isDarkTheme;
     this.langService.currentLanguage.subscribe(lang => {
       this.language = lang;
       this.setProjectsByLanguage(lang);
     }) 
+        
   } 
 
   setProjectsByLanguage(lang: string){
     this.db.getProjects().subscribe((projects) => {
-      this.setArray(projects,'types');
-      this.setArray(projects,'technologies');      
+      this.setChipsArray(projects,'types');
+      this.setChipsArray(projects,'technologies');      
       this.projects = [];      
       projects.forEach(project => {
         // Search de keys by language
@@ -56,14 +63,13 @@ export class PortfolioComponent implements OnInit {
     });       
   }
 
-  setArray(projects: Project[],arrName: string){
+  setChipsArray(projects: Project[],arrName: string){
    this[arrName] = [];
     projects.forEach(project => {
       project[arrName].forEach(type => {
         // Search the type within the object's array
         let i = this[arrName].findIndex(t => t.name === type);
-        if (i < 0){
-          let color = arrName === 'technologies' ? 'primary': 'warn';
+        if (i < 0){          
           this[arrName].push({name: type,selected: false,color: ''});
         }
       })
@@ -102,6 +108,7 @@ export class PortfolioComponent implements OnInit {
       }      
     }else{
       mProjects = this.getProjectSelected('types',this.projectsBackup);
+      //this.setChipsArray(mProjects,'technologies');
       if (techsSeleted > 0){
         mProjects = this.getProjectSelected('technologies',mProjects);
       }      
@@ -144,5 +151,4 @@ export class PortfolioComponent implements OnInit {
     }       
     return mProjects;
   }  
-
 }

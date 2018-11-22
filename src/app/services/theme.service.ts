@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,7 @@ export class ThemeService {
 
   constructor() { }
 
-  private _darkTheme: Subject<boolean> = new Subject<boolean>();
+  private _darkTheme: BehaviorSubject<boolean> = new BehaviorSubject(true);
   isDarkTheme = this._darkTheme.asObservable();
 
   setDarkTheme(isDarkTheme: boolean) {
