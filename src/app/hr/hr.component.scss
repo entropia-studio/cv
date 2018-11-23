@@ -6,15 +6,14 @@
   justify-content: center;
   
   .hr-line {
-    width: 8em;
-    position: relative;
+    width: 8em;    
     margin: 15px;
     border-bottom: 5px solid ;
     border-color: $dark-secondary-text;
   }
-  .hr-icon {
+  .hr-icon {    
     position: relative;
-    top: 3px;
+    top: 6px;
     color: $dark-secondary-text;    
   }
   .dark-text-border{
