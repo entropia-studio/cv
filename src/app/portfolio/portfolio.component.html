@@ -23,17 +23,19 @@
     </mat-chip>                
   </mat-chip-list>  
 </div>     
-<div class="container" *ngIf="projects"> 
-  
-  <div class="brick" *ngFor="let project of projects">
-    <mat-card class="example-card" >      
+<div class="container" *ngIf="projects">      
+    <mat-card class="portfolio-card" *ngFor="let project of projects" color="warn"> 
+      <mat-card-header>
+          <img mat-card-sm-image class="card-header-image" [ngStyle]="{'background-image': 'url(\'../assets/'+ project._id + '.png\')'}">          
+          <mat-card-title>{{project.name[0].text}}</mat-card-title>
+          <mat-card-subtitle>
+              <strong>{{langService.getTag('project',language)}}</strong>: {{project.types}}<br/>
+              <strong>{{langService.getTag('technologies',language)}}</strong>: {{project.technologies}}
+          </mat-card-subtitle>
+      </mat-card-header>     
       <mat-card-content>        
-        <h4>{{project.name[0].text}}</h4>
-        <span class="center"><img src="../assets/{{project._id}}.png"></span>
-        <li><strong>{{langService.getTag('project',language)}}</strong>: {{project.types}}</li>
-        <li><strong>{{langService.getTag('technologies',language)}}</strong>: {{project.technologies}}</li>        
+              
       </mat-card-content>      
-    </mat-card>  
-  </div>  
+    </mat-card>    
 </div>
 
