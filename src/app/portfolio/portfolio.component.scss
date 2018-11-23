@@ -30,23 +30,31 @@ li{
 
 .container{    
     display: flex;             
-    flex-direction: row;;    
-    flex-wrap: wrap;
-    margin: 1em;  
-    justify-content: flex-start;
-    .portfolio-card{
-      width: 46%;
-      margin: 0.5em;
-
+    flex-direction: row;   
+    flex-wrap: wrap;    
+    justify-content: space-evenly;
+    .portfolio-card{      
+      margin: 1em; 
+      flex: 0 1 25%;
       .card-header-image{
         background-size: cover;
       }     
       strong{
         text-transform: capitalize;
       }
-    }      
-    
+    }          
   }
+
+/* Small screens */
+@media all and (max-width: 674px) {
+  .container {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+    .portfolio-card{
+      flex: 0 1 100%;
+    }
+  }
+}
 
   
 
