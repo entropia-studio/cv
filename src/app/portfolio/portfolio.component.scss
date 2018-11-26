@@ -38,7 +38,6 @@ li{
 }
 
 .container{    
-<<<<<<< HEAD
     display: flex;                 
     flex-wrap: wrap;    
     margin: 0.5em;
@@ -47,21 +46,12 @@ li{
       width: 32%;
       margin: 1%;
       background-color: $dark-secondary-text;      
-=======
-    display: flex;             
-    flex-direction: row;   
-    flex-wrap: wrap;    
-    justify-content: space-evenly;
-    .portfolio-card{      
-      margin: 1em; 
-      flex: 0 1 25%;
->>>>>>> 92ba264dd5deb65f155ba0f914d0fee3e5b4d581
+
       .card-header-image{
         background-size: cover;
       }     
       strong{
         text-transform: capitalize;
-<<<<<<< HEAD
       }    
     }  
     .portfolio-card:nth-of-type(3n){
@@ -69,7 +59,9 @@ li{
     }  
     .portfolio-card:nth-of-type(3n+1){
       margin-left: 0;
-    }      
+    }    
+  }  
+
     
     
   .open_project{        
@@ -91,22 +83,10 @@ li{
   }
     
     
-=======
-      }
-    }          
-  }
 
-/* Small screens */
-@media all and (max-width: 674px) {
-  .container {
-    /* On small screens, we are no longer using row direction but column */
-    flex-direction: column;
-    .portfolio-card{
-      flex: 0 1 100%;
-    }
->>>>>>> 92ba264dd5deb65f155ba0f914d0fee3e5b4d581
-  }
-}
+      
+
+
 
   
 
