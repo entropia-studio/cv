@@ -21,12 +21,15 @@ import {MatChipsModule} from '@angular/material/chips';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { HrComponent } from './hr/hr.component';
 
+import { HighlightDirective } from './directives/highlight.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     PortfolioComponent,
-    HrComponent
+    HrComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
