@@ -1,9 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule }    from '@angular/common/http';
 
 // Services
@@ -18,9 +15,15 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatMenuModule} from '@angular/material/menu';
+
+//Components
+import { AppComponent } from './app.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { HrComponent } from './hr/hr.component';
 
+// Directives
 import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
@@ -41,7 +44,8 @@ import { HighlightDirective } from './directives/highlight.directive';
     MatCardModule,
     MatSlideToggleModule,
     MatIconModule,
-    MatChipsModule
+    MatChipsModule,
+    MatMenuModule
   ],
   providers: [LangService],
   bootstrap: [AppComponent]

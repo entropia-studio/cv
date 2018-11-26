@@ -2,7 +2,9 @@
   <mat-toolbar-row>
   <img src="../../assets/javier.jpeg">    
   <!-- This fills the remaining space of the current row -->
+  <!--
   <span class="fill-remaining-space"></span>  
+  
   <div class="m-button-row">
     <button mat-button color="link">{{langService.getTag('portfolio',language)}}</button>    
     <button mat-button>{{langService.getTag('about',language)}}</button>    
@@ -10,6 +12,25 @@
     <button mat-button (click)="setLanguage('esp')" >ESP</button>    
     <button mat-button (click)="setLanguage('eng')">ENG</button>                
   </div>    
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>dialpad</mat-icon>
+      <span>{{langService.getTag('portfolio',language)}}</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>voicemail</mat-icon>
+      <span>{{langService.getTag('contact',language)}}</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon>
+      <span>{{langService.getTag('about',language)}}</span>
+    </button>
+  </mat-menu>
+    -->
   <button mat-mini-fab style="background-color: #263238" (click)="toggleDarkTheme(true)"></button>       
   <button mat-mini-fab style="background-color: #eceff1" (click)="toggleDarkTheme(false)"></button>  
 </mat-toolbar-row>
