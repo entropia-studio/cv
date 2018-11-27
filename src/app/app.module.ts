@@ -25,6 +25,7 @@ import { HrComponent } from './hr/hr.component';
 
 // Directives
 import { HighlightDirective } from './directives/highlight.directive';
+import { NavbarMenuDirective } from './directives/navbar-menu.directive';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HighlightDirective } from './directives/highlight.directive';
     NavbarComponent,
     PortfolioComponent,
     HrComponent,
-    HighlightDirective
+    HighlightDirective,
+    NavbarMenuDirective
   ],
   imports: [
     BrowserModule,
