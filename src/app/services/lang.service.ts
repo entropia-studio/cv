@@ -23,7 +23,7 @@ export class LangService {
   }
 
 
-  getTag(tag: string,lang: string): string {
+  getTag(tag: string,lang: string, formatText: string | null): string {
     
     var mTag = 'nop';
 
@@ -31,11 +31,20 @@ export class LangService {
       if (element.tag == tag){        
         element.lang.forEach(lang_tag => {          
           if (lang_tag.name == lang)            
-            mTag = lang_tag.text;          
+            mTag = formatText !== null && formatText ? this.formatText(lang_tag.text,formatText) : lang_tag.text;          
         })
       }
     });
     return mTag;
+  }
+
+  formatText(str: string, type: string){
+    switch(type){
+      case 'uppercase':
+        return str.toUpperCase;        
+      case 'capitalize':
+        return str[0].toUpperCase() + str.slice(1);        
+    }
   }
 
 }

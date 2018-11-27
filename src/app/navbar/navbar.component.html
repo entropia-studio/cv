@@ -1,9 +1,9 @@
 <mat-toolbar color="primary" *ngIf="language">
   <mat-toolbar-row>  
   <div class="m-button-row" appNavbarMenu minWidth="480">
-    <button mat-button color="link">{{langService.getTag('portfolio',language)}}</button>    
-    <button mat-button>{{langService.getTag('about',language)}}</button>    
-    <button mat-button>{{langService.getTag('contact',language)}}</button>                     
+    <button mat-button><mat-icon>insert_drive_file</mat-icon> {{langService.getTag('portfolio',language,'capitalize')}}</button>    
+    <button mat-button><mat-icon>face</mat-icon> {{langService.getTag('about',language,'capitalize')}}</button>    
+    <button mat-button><mat-icon>email</mat-icon> {{langService.getTag('contact',language,'capitalize')}}</button>                     
   </div>    
 
   <button mat-icon-button [matMenuTriggerFor]="menu" appNavbarMenu maxWidth="479">
@@ -12,15 +12,15 @@
   <mat-menu #menu="matMenu">
     <button mat-menu-item>
       <mat-icon>insert_drive_file</mat-icon>
-      <span>{{langService.getTag('portfolio',language)}}</span>
+      <span>{{langService.getTag('portfolio',language,'capitalize')}}</span>
     </button>    
     <button mat-menu-item>
       <mat-icon>face</mat-icon>
-      <span>{{langService.getTag('about',language)}}</span>
+      <span>{{langService.getTag('about',language,'capitalize')}}</span>
     </button>
     <button mat-menu-item>
       <mat-icon>email</mat-icon>
-      <span>{{langService.getTag('contact',language)}}</span>
+      <span>{{langService.getTag('contact',language,'capitalize')}}</span>
     </button>
   </mat-menu>
   <!-- This fills the remaining space of the current row -->
