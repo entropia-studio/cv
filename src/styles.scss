@@ -52,3 +52,13 @@ body {
 .dark-text-color{  
     color: $light-primary-text !important;
 }
+
+.d-flex{
+    display: flex;
+}
+.flex-row{
+    flex-direction: row;
+}
+.flex-column{
+    flex-direction: column;
+}

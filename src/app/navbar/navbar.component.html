@@ -1,38 +1,41 @@
 <mat-toolbar color="primary" *ngIf="language">
-  <mat-toolbar-row>
-  <img src="../../assets/javier.jpeg">    
-  <!-- This fills the remaining space of the current row -->
-  
-  <span class="fill-remaining-space"></span>  
-  
+  <mat-toolbar-row>  
   <div class="m-button-row" appNavbarMenu minWidth="576">
     <button mat-button color="link">{{langService.getTag('portfolio',language)}}</button>    
     <button mat-button>{{langService.getTag('about',language)}}</button>    
-    <button mat-button>{{langService.getTag('contact',language)}}</button>   
-    <button mat-button (click)="setLanguage('esp')" >ESP</button>    
-    <button mat-button (click)="setLanguage('eng')">ENG</button>                
+    <button mat-button>{{langService.getTag('contact',language)}}</button>                     
   </div>    
 
   <button mat-icon-button [matMenuTriggerFor]="menu" appNavbarMenu minWidth="320" maxWidth="575">
-    <mat-icon>more_vert</mat-icon>
+    <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item>
-      <mat-icon>dialpad</mat-icon>
+      <mat-icon>insert_drive_file</mat-icon>
       <span>{{langService.getTag('portfolio',language)}}</span>
-    </button>
-    <button mat-menu-item disabled>
-      <mat-icon>voicemail</mat-icon>
-      <span>{{langService.getTag('contact',language)}}</span>
-    </button>
+    </button>    
     <button mat-menu-item>
-      <mat-icon>notifications_off</mat-icon>
+      <mat-icon>face</mat-icon>
       <span>{{langService.getTag('about',language)}}</span>
     </button>
+    <button mat-menu-item>
+      <mat-icon>email</mat-icon>
+      <span>{{langService.getTag('contact',language)}}</span>
+    </button>
   </mat-menu>
-  
-  <button mat-mini-fab style="background-color: #263238" (click)="toggleDarkTheme(true)"></button>       
-  <button mat-mini-fab style="background-color: #eceff1" (click)="toggleDarkTheme(false)"></button>  
+  <!-- This fills the remaining space of the current row -->
+  <span class="fill-remaining-space"></span> 
+  <mat-slide-toggle
+          class="slide-toggle"
+          color="primary"          
+          (change)="setLanguage($event.checked)">
+        ENG
+  </mat-slide-toggle>
+  <img src="../../assets/javier.jpeg">      
+  <div class="d-flex flex-column">
+    <button mat-mini-fab style="background-color: #263238" (click)="toggleDarkTheme(true)"></button>       
+    <button mat-mini-fab style="background-color: #eceff1" (click)="toggleDarkTheme(false)"></button>  
+  </div>  
 </mat-toolbar-row>
 </mat-toolbar>          
 

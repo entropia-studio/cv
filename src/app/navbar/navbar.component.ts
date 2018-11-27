@@ -36,7 +36,8 @@ export class NavbarComponent implements OnInit, AfterContentInit {
     this.themeService.setDarkTheme(checked);
   }
 
-  setLanguage(lang: string){
+  setLanguage(checked: boolean){    
+    let lang = checked ? 'eng' : 'esp';
     this.langService.setLanguage(lang);
   }
 

@@ -26,11 +26,11 @@ export class NavbarMenuDirective implements OnInit{
     }
     let visibility = this.setVisibility(condition);
     
-    this.el.nativeElement.style.visibility = visibility;
+    this.el.nativeElement.style.display = visibility;
   }
 
   setVisibility(condition: boolean){
-    return condition ? 'visible' : 'hidden';
+    return condition ? 'flex' : 'none';
   } 
   
 
