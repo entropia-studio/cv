@@ -1,12 +1,12 @@
 <mat-toolbar color="primary" *ngIf="language">
   <mat-toolbar-row>  
-  <div class="m-button-row" appNavbarMenu minWidth="576">
+  <div class="m-button-row" appNavbarMenu minWidth="480">
     <button mat-button color="link">{{langService.getTag('portfolio',language)}}</button>    
     <button mat-button>{{langService.getTag('about',language)}}</button>    
     <button mat-button>{{langService.getTag('contact',language)}}</button>                     
   </div>    
 
-  <button mat-icon-button [matMenuTriggerFor]="menu" appNavbarMenu minWidth="320" maxWidth="575">
+  <button mat-icon-button [matMenuTriggerFor]="menu" appNavbarMenu maxWidth="479">
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
