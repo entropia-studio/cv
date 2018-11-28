@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ThemeService } from '../services/theme.service';
 
@@ -8,6 +8,8 @@ import { ThemeService } from '../services/theme.service';
   styleUrls: ['./hr.component.scss']
 })
 export class HrComponent implements OnInit {
+
+  @Input() title: string;
 
   isDarkTheme: Observable<boolean>;
 

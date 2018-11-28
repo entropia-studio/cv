@@ -30,6 +30,7 @@ import { HrComponent } from './hr/hr.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { NavbarMenuDirective } from './directives/navbar-menu.directive';
 import { ProjectComponent } from './project/project.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ProjectComponent } from './project/project.component';
     HrComponent,
     HighlightDirective,
     NavbarMenuDirective,
-    ProjectComponent
+    ProjectComponent,
+    AboutComponent
   ],
   entryComponents: [ProjectComponent],
   imports: [

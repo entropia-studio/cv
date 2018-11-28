@@ -1,11 +1,7 @@
 
 @import '~@angular/material/theming';
 
-* {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;	
-	box-sizing: border-box; 
-}
+
 
 .type{
   display: flex;      
@@ -13,7 +9,7 @@
   margin: 0.5em;  
   h4{    
     text-transform: capitalize; 
-    width: 70px;    
+    width: 6em;    
     color: $dark-secondary-text;
   }    
   .technologies{

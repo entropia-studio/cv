@@ -40,6 +40,13 @@ $theme: map_merge($theme, ('background': $background));
     @include angular-material-theme($dark-theme);
 }
 
+*,*::after,*::before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;	
+    box-sizing: border-box; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
 body{
     margin: 0px;    
 }
