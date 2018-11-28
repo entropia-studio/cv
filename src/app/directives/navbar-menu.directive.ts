@@ -19,7 +19,7 @@ export class NavbarMenuDirective implements OnInit{
   }
 
   checkTypeOfMenu(innerWidth: number){
-    var condition: boolean = this.minWidth ?  innerWidth > this.minWidth : innerWidth < this.maxWidth;     
+    var condition: boolean = this.minWidth ?  innerWidth > this.minWidth : innerWidth <= this.maxWidth;     
     let visibility = this.setVisibility(condition);    
     this.el.nativeElement.style.display = visibility;
   }

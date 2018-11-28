@@ -16,6 +16,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 //Components
@@ -27,6 +29,7 @@ import { HrComponent } from './hr/hr.component';
 // Directives
 import { HighlightDirective } from './directives/highlight.directive';
 import { NavbarMenuDirective } from './directives/navbar-menu.directive';
+import { ProjectComponent } from './project/project.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +38,10 @@ import { NavbarMenuDirective } from './directives/navbar-menu.directive';
     PortfolioComponent,
     HrComponent,
     HighlightDirective,
-    NavbarMenuDirective
+    NavbarMenuDirective,
+    ProjectComponent
   ],
+  entryComponents: [ProjectComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -48,7 +53,8 @@ import { NavbarMenuDirective } from './directives/navbar-menu.directive';
     MatSlideToggleModule,
     MatIconModule,
     MatChipsModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule
   ],
   providers: [LangService],
   bootstrap: [AppComponent]

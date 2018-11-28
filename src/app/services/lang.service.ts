@@ -41,7 +41,7 @@ export class LangService {
   formatText(str: string, type: string){
     switch(type){
       case 'uppercase':
-        return str.toUpperCase;        
+        return str.toUpperCase();        
       case 'capitalize':
         return str[0].toUpperCase() + str.slice(1);        
     }

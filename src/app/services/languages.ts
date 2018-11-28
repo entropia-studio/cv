@@ -10,6 +10,8 @@ export class Languages {
             {tag: 'project',lang: [{name: 'esp',text: 'proyecto'},{name: 'eng',text: 'project'}]},
             {tag: 'technologies',lang: [{name: 'esp',text: 'tecnologías'},{name: 'eng',text: 'technologies'}]},
             {tag: 'technology',lang: [{name: 'esp',text: 'tecnología'},{name: 'eng',text: 'technology'}]},
+            {tag: 'description',lang: [{name: 'esp',text: 'descripción'},{name: 'eng',text: 'description'}]},
+            {tag: 'visit',lang: [{name: 'esp',text: 'visitar'},{name: 'eng',text: 'visit'}]},
           ];
     }
 }

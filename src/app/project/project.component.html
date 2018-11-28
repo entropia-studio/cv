@@ -1,0 +1,18 @@
+<mat-card>   
+  <mat-card-title-group>          
+      <mat-card-title>{{data.project.name[0].text}}</mat-card-title>      
+  </mat-card-title-group>    
+  <mat-card-content>
+    <div class="d-flex">      
+      <img src="../assets/{{data.project._id}}.png" class="col-image">      
+      <span class="col-text">
+          <strong>{{langService.getTag('project',data.language,'capitalize')}}</strong>: {{data.project.types.join(', ')}}<br/>
+          <strong>{{langService.getTag('technologies',data.language,'capitalize')}}</strong>: {{data.project.technologies.join(', ')}}<br/>
+          <strong>{{langService.getTag('description',data.language,'capitalize')}}</strong>: <span [innerHTML]="data.project.description[0].text"></span>
+      </span>          
+    </div>  
+  </mat-card-content>
+  <mat-card-actions class="card-buttons">
+      <a mat-button href="{{data.project.url}}" target="_blank" >{{langService.getTag('visit',data.language,'uppercase')}}</a>
+  </mat-card-actions>       
+</mat-card>    

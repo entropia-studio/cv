@@ -1,0 +1,23 @@
+@import '~@angular/material/theming';
+
+$width-image: 30%;
+
+.col-image{
+    width: $width-image;
+    height: $width-image;         
+}
+.col-text{
+    flex: 1 1 auto;
+    margin-left: 1em; 
+    line-height: 1.6em;
+}
+
+.card-buttons{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mat-button{
+    background-color: $dark-primary-text;
+    color: $light-primary-text;
+}

@@ -1,15 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../services/database.service';
 import { LangService } from '../services/lang.service';
 import { Project } from '../interfaces/project';
+import { Chip } from '../interfaces/chip';
 import { Observable } from 'rxjs';
 import { ThemeService } from '../services/theme.service';
+import { MatDialog } from '@angular/material';
+import { ProjectComponent } from '../project/project.component';
 
-interface Chip{
-  name: string;
-  selected: boolean;
-  color: string;
-}
+
+
 
 @Component({
   selector: 'app-portfolio',
@@ -30,6 +30,7 @@ export class PortfolioComponent implements OnInit {
     private db: DatabaseService,
     private langService: LangService,
     private themeService: ThemeService,
+    public dialog: MatDialog,    
   ) {}
 
   ngOnInit() {
@@ -55,7 +56,7 @@ export class PortfolioComponent implements OnInit {
           name: [name],
           description: [description],
           technologies: project.technologies,
-          url: project.url,
+          url: project.url,          
           types: project.types
         });
       })
@@ -151,4 +152,10 @@ export class PortfolioComponent implements OnInit {
     }       
     return mProjects;
   }  
+
+  openModal(project: Project){    
+    this.dialog.open(ProjectComponent, {      
+      data: {project: project,language: this.language}
+    });    
+  }
 }

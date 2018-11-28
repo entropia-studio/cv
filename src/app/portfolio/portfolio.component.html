@@ -34,7 +34,7 @@
               <strong>{{langService.getTag('technologies',language)}}</strong>: {{project.technologies.join(', ')}}
           </mat-card-subtitle>
       </mat-card-title-group>              
-      <div class="open_project">
+      <div class="open_project" (click)="openModal(project)">
           <mat-icon color="primary">zoom_in</mat-icon> 
       </div>
     </mat-card>    
