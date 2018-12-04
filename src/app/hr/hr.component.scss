@@ -4,10 +4,11 @@
 .hr-theme {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   
   .hr-line {
-    width: 8em;    
-    margin: 15px;
+    width: 20%;    
+    margin: 0.8em;
     border-bottom: 5px solid ;
     border-color: $dark-secondary-text;
   }
@@ -25,8 +26,11 @@
   i{
     font-size: 2.5em;
   }  
-  h1{
-    margin-bottom: 10px;    
+  h1{    
+    width: 100%;   
+    display: flex;
+    justify-content: center;
+    margin: 0em;
   }
 
 }

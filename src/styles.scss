@@ -6,7 +6,7 @@
 @include mat-core();
 
 $primary: mat-palette($mat-grey,A200);
-$accent: mat-palette($mat-pink, A400, A100, A700);
+$accent: mat-palette($mat-orange, A400, A100, A700);
 $warn: mat-palette($mat-red);
 
 $theme: mat-light-theme($primary, $accent, $warn);
@@ -18,7 +18,6 @@ $background: map-get($theme, 'background');
 $background: map_merge($background, ('background': $custom-background-color));
 $theme: map_merge($theme, ('background': $background));
 
-
 @include angular-material-theme($theme);
 
 
@@ -26,7 +25,7 @@ $theme: map_merge($theme, ('background': $background));
 .dark-theme {
     color: $light-primary-text;
     $dark-primary: mat-palette($mat-grey, 900, A100,A700);
-    $dark-accent: mat-palette($mat-indigo, A400, A100, A700);
+    $dark-accent: mat-palette($mat-orange, A400, A100, A700);
     $dark-warn: mat-palette($mat-red);
     $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 
@@ -40,36 +39,7 @@ $theme: map_merge($theme, ('background': $background));
     @include angular-material-theme($dark-theme);
 }
 
-*,*::after,*::before {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;	
-    box-sizing: border-box; 
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-}
 
-body{
-    margin: 0px;    
-}
 
-html,
-body {
-	height: 100%;
-}
+@import './main.scss';
 
-.dark-text-color{  
-    color: $light-primary-text !important;
-}
-
-.d-flex{
-    display: flex;
-}
-.flex-row{
-    flex-direction: row;
-}
-.flex-column{
-    flex-direction: column;
-}
-
-.flex-grow-1{
-    flex-grow: 1;
-}

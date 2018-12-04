@@ -1,8 +1,8 @@
 <div class="hr-theme">
+  <h1 *ngIf="title">{{title}}</h1>
   <div [ngClass]="{'hr-line':true,'dark-text-border': isDarkTheme | async}"></div>
   <div [ngClass]="{'hr-icon':true,'dark-icon': isDarkTheme | async}" >    
-    <i class="material-icons" *ngIf="!title">polymer</i>
-    <h1 *ngIf="title">{{title}}</h1>
+    <i class="material-icons">polymer</i>    
   </div>
   <div [ngClass]="{'hr-line':true,'dark-text-border': isDarkTheme | async}"></div>
 </div>
