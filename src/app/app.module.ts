@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
 
+//Forms
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 // Services
 import { LangService } from './services/lang.service';
 
@@ -18,6 +22,8 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatInputModule} from '@angular/material/input';
+
 
 
 
@@ -33,6 +39,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { NavbarMenuDirective } from './directives/navbar-menu.directive';
 import { ProjectComponent } from './project/project.component';
 import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +50,8 @@ import { AboutComponent } from './about/about.component';
     HighlightDirective,
     NavbarMenuDirective,
     ProjectComponent,
-    AboutComponent
+    AboutComponent,
+    ContactComponent
   ],
   entryComponents: [ProjectComponent],
   imports: [
@@ -59,7 +67,10 @@ import { AboutComponent } from './about/about.component';
     MatChipsModule,
     MatMenuModule,
     MatDialogModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [LangService],
   bootstrap: [AppComponent]

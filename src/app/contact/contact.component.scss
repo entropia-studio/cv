@@ -1,0 +1,23 @@
+
+@import '~@angular/material/theming';
+
+
+
+form{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    .mid-width:nth-of-type(odd){
+        width: 49%;
+        margin-right: 1%;
+    }
+    .mid-width:nth-of-type(even){
+        width: 49%;  
+        margin-left: 1%;  
+    }
+    
+    .full-width{
+        width: 100%;
+    }
+}

@@ -1,0 +1,16 @@
+<app-hr [title]="langService.getTag('contact',language)"></app-hr>
+<form [formGroup]="contactForm" (ngSubmit)="sendForm()" novalidate>
+    <mat-form-field class="mid-width">
+        <input matInput placeholder="Your firstname">
+    </mat-form-field>
+    <mat-form-field class="mid-width">
+        <input matInput placeholder="Your lastname">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Your email">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+        <textarea matInput placeholder="Your message for me"></textarea>
+    </mat-form-field>
+    <button mat-button color="accent">Send</button>
+</form>

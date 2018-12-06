@@ -1,7 +1,9 @@
-<div class="bground mat-app-background" [ngClass]="{'dark-theme': isDarkTheme | async}" >
-  
+<div class="bground mat-app-background" [ngClass]="{'dark-theme': isDarkTheme | async}" >  
     <app-navbar></app-navbar> 
-    <app-portfolio></app-portfolio>   
-    <app-about></app-about>
+    <div class="container mat-app-background">
+        <app-portfolio></app-portfolio>   
+        <app-about></app-about>
+        <app-contact></app-contact>
+    </div>    
 </div>
 
