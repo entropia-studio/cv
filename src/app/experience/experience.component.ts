@@ -28,8 +28,7 @@ export class ExperienceComponent implements OnInit {
 
   setJobsByLanguage(lang: string){
     this.db.getExperience().subscribe((jobs) => {      
-      this.jobs = [];      
-      console.log('jobs',jobs)
+      this.jobs = [];            
       jobs.forEach(job => {
         // Search de keys by language
         let position = job.position.find(o => o.lang === lang);
@@ -42,9 +41,7 @@ export class ExperienceComponent implements OnInit {
           period: [period],
           company: job.company          
         });
-      })
-      console.log(this.jobs);
-      //this.projectsBackup = this.projects;      
+      })      
     });       
   }
 

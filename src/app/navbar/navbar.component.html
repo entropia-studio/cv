@@ -11,15 +11,19 @@
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>
+    <button mat-menu-item (click)="scrollToComponent('portfolio')">
       <mat-icon>insert_drive_file</mat-icon>
       <span>{{langService.getTag('portfolio',language,'capitalize')}}</span>
     </button>    
-    <button mat-menu-item>
+    <button mat-menu-item (click)="scrollToComponent('about')">
       <mat-icon>face</mat-icon>
       <span>{{langService.getTag('about',language,'capitalize')}}</span>
     </button>
-    <button mat-menu-item>
+    <button mat-menu-item (click)="scrollToComponent('experience')">
+        <mat-icon>timeline</mat-icon>
+        <span>{{langService.getTag('experience',language,'capitalize')}}</span>
+      </button>
+    <button mat-menu-item (click)="scrollToComponent('contact')">
       <mat-icon>email</mat-icon>
       <span>{{langService.getTag('contact',language,'capitalize')}}</span>
     </button>

@@ -42,6 +42,7 @@ export class NavbarComponent implements OnInit, AfterContentInit {
   }
 
   scrollToComponent(el){
+    console.log('el',el)
     document.getElementById(el).scrollIntoView({behavior: "smooth"});
   }
 
