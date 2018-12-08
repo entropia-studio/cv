@@ -15,6 +15,6 @@ export class DatabaseService {
     ) { }
 
   getProjects(): Observable<Project[]>{
-    return this.http.get<Project[]>(environment.apiUrl);
+    return this.http.get<Project[]>(environment.apiUrl + '/data');
   }
 }

@@ -23,6 +23,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatInputModule} from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 
 
@@ -59,6 +61,8 @@ import { ContactComponent } from './contact/contact.component';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
@@ -69,8 +73,7 @@ import { ContactComponent } from './contact/contact.component';
     MatDialogModule,
     MatProgressBarModule,
     MatInputModule,
-    FormsModule,
-    ReactiveFormsModule
+    MatSnackBarModule,    
   ],
   providers: [LangService],
   bootstrap: [AppComponent]

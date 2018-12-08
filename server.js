@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const app = express();
 const MongoClient = require('mongodb').MongoClient;
 const ObjectID = require('mongodb').ObjectID;
-const nodemailer = require('nodemailer');
+const sendEmail = require('./sendemail');
 
 
 
@@ -68,11 +68,11 @@ client.connect((error) => {
     curl -H "Content-Type: application/json" -X POST -d '{"firstname": "Javier", "lastname":"Sánchez","email":"jsanchez@portear.com","message":"Lorem ipsum","subject":"Contacto currículo Javier Sánchez"}'  "http://localhost:8080/contact-form"
     */
 
-    app.post('/contact-form',(req,res) => {
+    app.post('/api/contact-form',(req,res) => {
         try{            
-            sendEmail(smtpConfig,req.body,(result)=>{                
-                res.send(result.message);
-            });
+            sendEmail(smtpConfig,req.body,res,(result)=>{                                                  
+                res.status(200).send(result);
+            });             
         }catch(e){
             handleError(e,res);
         }
@@ -88,28 +88,7 @@ client.connect((error) => {
     app.listen(process.env.PORT || 8080);    
 });
 
-const sendEmail = function(options, data, callback){
-    let transporter = nodemailer.createTransport(options);
-    // setup e-mail data 
-    var mailData = {
-        from: options.auth.user, // sender address
-        to: options.auth.user, // list of receivers
-        subject: data.subject, // Subject line        
-        html: data.message // html body
-    }
 
-    // send mail with defined transport object
-    transporter.sendMail(mailData, function(error, response){
-        if(error){
-            callback(error);
-        }else{                        
-            callback("Message sent: " + response);
-        }
-
-        // if you don't want to use this transport object anymore, uncomment following line
-        //smtpTransport.close(); // shut down the connection pool, no more messages
-    });
-}
 
 const findDocuments = function(db, callback) {
     // Get the documents collection

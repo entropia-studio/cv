@@ -8,12 +8,11 @@
 
 body{
     margin: 0px;    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-html,
-body {
-	height: 100%;
-}
 
 .dark-text-color{  
     color: $light-primary-text !important;

@@ -1,16 +1,20 @@
 <app-hr [title]="langService.getTag('contact',language)"></app-hr>
-<form [formGroup]="contactForm" (ngSubmit)="sendForm()" novalidate>
+<form [formGroup]="contactForm" (ngSubmit)="sendForm()">
     <mat-form-field class="mid-width">
-        <input matInput placeholder="Your firstname">
+        <input matInput formControlName="firstname" class="form-control" placeholder="{{langService.getTag('your',language,'capitalize') +' '+langService.getTag('firstname',language,'')}}">
     </mat-form-field>
     <mat-form-field class="mid-width">
-        <input matInput placeholder="Your lastname">
+        <input matInput formControlName="lastname" class="form-control" placeholder="{{langService.getTag('your',language,'capitalize') +' '+langService.getTag('lastname',language,'')}}">
     </mat-form-field>
-    <mat-form-field class="full-width">
-        <input matInput placeholder="Your email">
+    <mat-form-field class="mid-width">
+        <input matInput formControlName="email" class="form-control" placeholder="{{langService.getTag('your',language,'capitalize')}} email">
     </mat-form-field>
-    <mat-form-field class="full-width">
-        <textarea matInput placeholder="Your message for me"></textarea>
+    <mat-form-field class="mid-width">
+        <input matInput formControlName="phone" class="form-control" placeholder="{{langService.getTag('your',language,'capitalize') +' '+langService.getTag('phone',language,'')}}">
     </mat-form-field>
-    <button mat-button color="accent">Send</button>
+    <mat-form-field class="full-width message">
+        <textarea matInput formControlName="message" class="form-control" placeholder="{{langService.getTag('messageForMe',language,'capitalize')}}"></textarea>
+    </mat-form-field>
+    <button mat-button color="accent" 
+        [disabled]="!contactForm.valid">{{langService.getTag('send',language,'capitalize')}}</button>
 </form>
