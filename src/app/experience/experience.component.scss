@@ -1,0 +1,10 @@
+@import '~@angular/material/theming';
+
+.my-panel{
+    margin-bottom: 1em;
+    background-color: $dark-secondary-text;      
+}
+
+.mat-expansion-panel-header-description, .mat-expansion-panel-header-title{
+    flex: 1 1 50%;        
+ }   

@@ -1,0 +1,13 @@
+<app-hr [title]="langService.getTag('experience',language)" id="experience"></app-hr>
+<mat-expansion-panel class="my-panel" *ngFor="let job of jobs">
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            <strong>{{ job.company}}</strong><br>            
+        </mat-panel-title>
+        <mat-panel-description>
+            <strong>{{job.position[0].text}}</strong>
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <h4>{{job.period[0].text}}</h4>
+    <p [innerHTML]="job.description[0].text"></p>        
+</mat-expansion-panel>

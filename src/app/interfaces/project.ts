@@ -1,3 +1,5 @@
+import { Language } from './language';
+
 export interface Project {
     _id: string;
     name: Language[];
@@ -8,7 +10,4 @@ export interface Project {
     url_code?: string;
 }
 
-interface Language{
-    lang: string;
-    text: string;
-}
+

@@ -5,9 +5,11 @@ export class Languages {
     constructor(){
         this.tags = [            
             {tag: 'about',lang: [{name: 'esp',text: 'sobre mí'},{name: 'eng',text: 'about'}]},
+            {tag: 'company',lang: [{name: 'esp',text: 'empresa'},{name: 'eng',text: 'company'}]},
             {tag: 'contact',lang: [{name: 'esp',text: 'contacto'},{name: 'eng',text: 'contact'}]},
             {tag: 'close',lang: [{name: 'esp',text: 'cerrar'},{name: 'eng',text: 'close'}]},
             {tag: 'description',lang: [{name: 'esp',text: 'descripción'},{name: 'eng',text: 'description'}]},
+            {tag: 'experience',lang: [{name: 'esp',text: 'experiencia'},{name: 'eng',text: 'experience'}]},
             {tag: 'firstname',lang: [{name: 'esp',text: 'nombre'},{name: 'eng',text: 'firstname'}]},
             {tag: 'lastname',lang: [{name: 'esp',text: 'apellido'},{name: 'eng',text: 'lastname'}]},
             {tag: 'messageForMe',lang: [{name: 'esp',text: 'tu mensaje para mí'},{name: 'eng',text: 'your message for me'}]},

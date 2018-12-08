@@ -54,9 +54,19 @@ client.connect((error) => {
 
     const db = client.db('curriculum');
     
-    app.get('/api/data',(req,res) => {                
+    app.get('/api/portfolio',(req,res) => {                
         try{
-            findDocuments(db,(docs) => {                
+            findPortfolioDoc(db,(docs) => {                
+                res.send(docs);                
+            });
+        }catch(e){
+            handleError(e,res);
+        }    
+    });
+
+    app.get('/api/experience',(req,res) => {                
+        try{
+            findExperienceDoc(db,(docs) => {                
                 res.send(docs);                
             });
         }catch(e){
@@ -90,11 +100,24 @@ client.connect((error) => {
 
 
 
-const findDocuments = function(db, callback) {
+const findPortfolioDoc = function(db, callback) {
     // Get the documents collection
     const collection = db.collection('projects');
     // Find some documents
     collection.find({}).toArray(function(err, docs) {
+      //assert.equal(err, null); 
+      if (err) console.error(err);     
+      callback(docs);
+    });
+  }
+
+  const findExperienceDoc = function(db, callback) {
+    // Get the documents collection
+    const collection = db.collection('experience');
+    var cursor = collection.find({active: true});
+    cursor.sort({order: 1});
+    // Find some documents
+    cursor.toArray(function(err, docs) {
       //assert.equal(err, null); 
       if (err) console.error(err);     
       callback(docs);

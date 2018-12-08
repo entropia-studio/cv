@@ -24,6 +24,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatInputModule} from '@angular/material/input';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 
 
@@ -42,6 +44,7 @@ import { NavbarMenuDirective } from './directives/navbar-menu.directive';
 import { ProjectComponent } from './project/project.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { ExperienceComponent } from './experience/experience.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +56,8 @@ import { ContactComponent } from './contact/contact.component';
     NavbarMenuDirective,
     ProjectComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    ExperienceComponent
   ],
   entryComponents: [ProjectComponent],
   imports: [
@@ -73,7 +77,8 @@ import { ContactComponent } from './contact/contact.component';
     MatDialogModule,
     MatProgressBarModule,
     MatInputModule,
-    MatSnackBarModule,    
+    MatSnackBarModule,   
+    MatExpansionModule 
   ],
   providers: [LangService],
   bootstrap: [AppComponent]

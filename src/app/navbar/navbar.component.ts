@@ -41,4 +41,8 @@ export class NavbarComponent implements OnInit, AfterContentInit {
     this.langService.setLanguage(lang);
   }
 
+  scrollToComponent(el){
+    document.getElementById(el).scrollIntoView({behavior: "smooth"});
+  }
+
 }
