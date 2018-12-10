@@ -104,7 +104,10 @@ const findPortfolioDoc = function(db, callback) {
     // Get the documents collection
     const collection = db.collection('projects');
     // Find some documents
-    collection.find({}).toArray(function(err, docs) {
+    var cursor = collection.find({active: true});
+    cursor.sort({order: 1});
+    
+    cursor.toArray(function(err, docs) {
       //assert.equal(err, null); 
       if (err) console.error(err);     
       callback(docs);
