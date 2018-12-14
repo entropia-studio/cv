@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Project } from '../interfaces/project';
 import { Experience } from '../interfaces/experience';
+import { Education } from '../interfaces/education';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
@@ -23,4 +24,11 @@ export class DatabaseService {
   getExperience(): Observable<Experience[]>{
     return this.http.get<Experience[]>(environment.apiUrl + '/experience');
   }
+
+  getEducation(): Observable<Education[]>{
+    return this.http.get<Education[]>(environment.apiUrl + '/education');
+  }
+
+
+
 }

@@ -45,6 +45,7 @@ import { ProjectComponent } from './project/project.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ExperienceComponent } from './experience/experience.component';
+import { AcademicComponent } from './academic/academic.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { ExperienceComponent } from './experience/experience.component';
     ProjectComponent,
     AboutComponent,
     ContactComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    AcademicComponent
   ],
   entryComponents: [ProjectComponent],
   imports: [

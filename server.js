@@ -74,6 +74,16 @@ client.connect((error) => {
         }    
     });
 
+    app.get('/api/education',(req,res) => {                
+        try{
+            findEducationDoc(db,(docs) => {                
+                res.send(docs);                
+            });
+        }catch(e){
+            handleError(e,res);
+        }    
+    });
+
     /*
     curl -H "Content-Type: application/json" -X POST -d '{"firstname": "Javier", "lastname":"Sánchez","email":"jsanchez@portear.com","message":"Lorem ipsum","subject":"Contacto currículo Javier Sánchez"}'  "http://localhost:8080/contact-form"
     */
@@ -117,6 +127,19 @@ const findPortfolioDoc = function(db, callback) {
   const findExperienceDoc = function(db, callback) {
     // Get the documents collection
     const collection = db.collection('experience');
+    var cursor = collection.find({active: true});
+    cursor.sort({order: 1});
+    // Find some documents
+    cursor.toArray(function(err, docs) {
+      //assert.equal(err, null); 
+      if (err) console.error(err);     
+      callback(docs);
+    });
+  }
+
+  const findEducationDoc = function(db, callback) {
+    // Get the documents collection
+    const collection = db.collection('education');
     var cursor = collection.find({active: true});
     cursor.sort({order: 1});
     // Find some documents
