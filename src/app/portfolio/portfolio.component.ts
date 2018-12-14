@@ -45,7 +45,8 @@ export class PortfolioComponent implements OnInit {
   setProjectsByLanguage(lang: string){
     this.db.getProjects().subscribe((projects) => {
       this.setChipsArray(projects,'types');
-      this.setChipsArray(projects,'technologies');      
+      this.setChipsArray(projects,'technologies');    
+      this.technologies = this.orderArrayByName(this.technologies);
       this.projects = [];      
       projects.forEach(project => {
         // Search de keys by language
@@ -74,8 +75,14 @@ export class PortfolioComponent implements OnInit {
           this[arrName].push({name: type,selected: false,color: ''});
         }
       })
-    })
+    })    
   }  
+
+  orderArrayByName(mArr: Chip[]) : Chip[]{
+    return mArr.sort((a,b) => {      
+      return ((a.name < b.name) ? -1 : ((a.name > b.name) ? 1 : 0));      
+    });
+  }
   
 
   filterByType(index: number){
