@@ -84,6 +84,16 @@ client.connect((error) => {
         }    
     });
 
+    app.get('/api/about',(req,res) => {                
+        try{
+            findAboutDoc(db,(doc) => {                
+                res.send(doc);                
+            });
+        }catch(e){
+            handleError(e,res);
+        }    
+    });
+
     /*
     curl -H "Content-Type: application/json" -X POST -d '{"firstname": "Javier", "lastname":"Sánchez","email":"jsanchez@portear.com","message":"Lorem ipsum","subject":"Contacto currículo Javier Sánchez"}'  "http://localhost:8080/contact-form"
     */
@@ -134,6 +144,15 @@ const findPortfolioDoc = function(db, callback) {
       //assert.equal(err, null); 
       if (err) console.error(err);     
       callback(docs);
+    });
+  }
+
+  const findAboutDoc = function(db, callback) {    
+    const collection = db.collection('about');
+    var cursor = collection.find({});        
+    cursor.next(function(err, doc) {      
+      if (err) console.error(err);     
+      callback(doc);
     });
   }
 
