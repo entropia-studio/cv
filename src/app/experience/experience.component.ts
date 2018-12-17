@@ -16,7 +16,7 @@ export class ExperienceComponent implements OnInit {
 
   constructor(
     private db: DatabaseService,
-    private langService: LangService,
+    public langService: LangService,
   ) { }
 
   ngOnInit() {

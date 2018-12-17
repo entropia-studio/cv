@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Project } from '../interfaces/project';
 import { Experience } from '../interfaces/experience';
 import { Education } from '../interfaces/education';
+import { About } from '../interfaces/about';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
@@ -27,6 +28,9 @@ export class DatabaseService {
 
   getEducation(): Observable<Education[]>{
     return this.http.get<Education[]>(environment.apiUrl + '/education');
+  }
+  getAbout(): Observable<About>{
+    return this.http.get<About>(environment.apiUrl + '/about');
   }
 
 

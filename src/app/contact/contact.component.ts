@@ -24,7 +24,7 @@ export class ContactComponent implements OnInit {
   });
 
   constructor(
-    private langService: LangService,
+    public langService: LangService,
     private fb: FormBuilder,  
     private sm: SendemailService,
     public snackBar: MatSnackBar

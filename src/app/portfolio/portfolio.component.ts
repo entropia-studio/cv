@@ -28,7 +28,7 @@ export class PortfolioComponent implements OnInit {
 
   constructor(
     private db: DatabaseService,
-    private langService: LangService,
+    public langService: LangService,
     private themeService: ThemeService,
     public dialog: MatDialog,    
   ) {}

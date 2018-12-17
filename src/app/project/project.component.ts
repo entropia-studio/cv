@@ -11,7 +11,7 @@ import { Url } from 'url';
 export class ProjectComponent {
 
   constructor(
-    private langService: LangService,
+    public langService: LangService,
     public dialogRef: MatDialogRef<ProjectComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {

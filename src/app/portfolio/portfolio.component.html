@@ -1,6 +1,6 @@
-<app-hr [title]="langService.getTag('portfolio',language)" id="portfolio"></app-hr>
+<app-hr [title]="langService.getTag('portfolio',language,'capitalize')" id="portfolio"></app-hr>
 <div class="type">
-   <h4 [ngClass]="{'dark-text-color': isDarkTheme | async}">{{langService.getTag('project',language)}}</h4>          
+   <h4 [ngClass]="{'dark-text-color': isDarkTheme | async}">{{langService.getTag('project',language,'capitalize')}}</h4>          
    
    <mat-chip-list multiple>     
       <mat-chip *ngFor="let type of types;let i = index" 
@@ -12,7 +12,7 @@
     </mat-chip-list>      
 </div>
 <div class="type">
-  <h4 [ngClass]="{'dark-text-color': isDarkTheme | async}">{{langService.getTag('technology',language)}}</h4> 
+  <h4 [ngClass]="{'dark-text-color': isDarkTheme | async}">{{langService.getTag('technology',language,'capitalize')}}</h4> 
   
   <div class="technologies">
     <mat-chip-list multiple>     
@@ -30,8 +30,8 @@
       <mat-card-title-group>          
           <mat-card-title>{{project.name[0].text}}</mat-card-title>
           <mat-card-subtitle>
-              <strong>{{langService.getTag('project',language)}}</strong>: {{project.types.join(', ')}}<br/>
-              <strong>{{langService.getTag('technologies',language)}}</strong>: {{project.technologies.join(', ')}}
+              <strong>{{langService.getTag('project',language,'capitalize')}}</strong>: {{project.types.join(', ')}}<br/>
+              <strong>{{langService.getTag('technologies',language,'capitalize')}}</strong>: {{project.technologies.join(', ')}}
           </mat-card-subtitle>
       </mat-card-title-group>              
       <div class="open_project" (click)="openModal(project)">

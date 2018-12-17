@@ -15,7 +15,7 @@ export class AcademicComponent implements OnInit {
 
   constructor(
     private db: DatabaseService,
-    private langService: LangService,
+    public langService: LangService,
   ) { }
 
   ngOnInit() {

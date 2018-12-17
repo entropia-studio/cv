@@ -1,4 +1,4 @@
-<app-hr [title]="langService.getTag('contact',language)" id="contact"></app-hr>
+<app-hr [title]="langService.getTag('contact',language,'')" id="contact"></app-hr>
 <form [formGroup]="contactForm" (ngSubmit)="sendForm()">
     <mat-form-field class="mid-width">
         <input matInput formControlName="firstname" class="form-control" placeholder="{{langService.getTag('your',language,'capitalize') +' '+langService.getTag('firstname',language,'')}}">
