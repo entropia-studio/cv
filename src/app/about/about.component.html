@@ -1,16 +1,16 @@
 
 <app-hr [title]="langService.getTag('about',language,'')" id="about"></app-hr>
-<p class="lead" *ngIf="aboutContent" [innerHtml]="aboutContent.head[0].text">    
+<p class="lead" *ngIf="aboutContent" [innerHtml]="aboutContent[0].head[0].text">    
 </p>
 <div class="d-flex flex-wrap" *ngIf="aboutContent">
     <div class="d-flex flex-column skills">        
-        <span [innerHtml]="aboutContent.paragraph[0].text"></span>    
+        <span [innerHtml]="aboutContent[0].paragraph[0].text"></span>    
         <div class="d-flex flex-column">    
-            <span *ngFor="let skill of aboutContent.skills">
+            <span *ngFor="let skill of aboutContent[0].skills">
                 {{skill.name | uppercase}}<br/>
                 <mat-progress-bar mode="determinate" [value]="skill.percent" color="accent"></mat-progress-bar>
             </span>            
         </div>        
     </div>    
-    <img src="../../assets/javi-by-carlos.png" height="200" >
+    <img src="./assets/javi-by-carlos.png" height="200" >
 </div>

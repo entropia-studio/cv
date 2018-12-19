@@ -12,7 +12,7 @@ import { About } from '../interfaces/about'
 export class AboutComponent implements OnInit {
 
   language: string;
-  aboutContent: About;
+  aboutContent: Array<About>;
 
   constructor(
     public langService: LangService,
@@ -27,17 +27,16 @@ export class AboutComponent implements OnInit {
   }
 
   setAboutByLanguage(lang: string){
-    this.db.getAbout().subscribe((doc) => {                  
-      // Search de keys by language
-      let head = doc.head.find(o => o.lang === lang);
-      let paragraph = doc.paragraph.find(o => o.lang === lang);              
-      this.aboutContent = {
+    this.db.getAbout().subscribe((doc) => {                        
+      // Search de keys by language      
+      let head = doc[0].head.find(o => o.lang === lang);
+      let paragraph = doc[0].paragraph.find(o => o.lang === lang);         
+      this.aboutContent = [{
         head: [head],
         paragraph: [paragraph],
-        skills : doc.skills
-      }      
-    })      
-    
+        skills : doc[0].skills
+      }] 
+    })   
   }
 
 }

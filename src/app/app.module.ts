@@ -47,6 +47,12 @@ import { ContactComponent } from './contact/contact.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { AcademicComponent } from './academic/academic.component';
 
+//Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,7 +86,10 @@ import { AcademicComponent } from './academic/academic.component';
     MatProgressBarModule,
     MatInputModule,
     MatSnackBarModule,   
-    MatExpansionModule 
+    MatExpansionModule,
+    AngularFireModule.initializeApp(environment.firebase),   
+    AngularFirestoreModule, 
+    AngularFireAuthModule,
   ],
   providers: [LangService],
   bootstrap: [AppComponent]
