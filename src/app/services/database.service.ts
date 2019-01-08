@@ -17,7 +17,9 @@ import { map,catchError } from 'rxjs/operators';
 export class DatabaseService {
   projects: Observable<Project>;
   private projectCollection: AngularFirestoreCollection<Project>;
+  private experienceCollection: AngularFirestoreCollection<Experience>;
   private aboutCollection: AngularFirestoreCollection<About>; 
+  private educationCollection: AngularFirestoreCollection<Education>; 
   
   
   constructor(
@@ -25,18 +27,19 @@ export class DatabaseService {
     private afs: AngularFirestore, 
     ) { }
 
-  getProjects(): Observable<Project[]>{
-    return this.http.get<Project[]>(environment.apiUrl + '/portfolio');
-    //this.projectCollection =  this.afs.collection<Project>('projects',ref => ref.where('active','==',1).orderBy('order','asc'));
-    //return this.projectCollection.valueChanges();
-  }
+  getProjects(): Observable<Project[]>{    
+    this.projectCollection =  this.afs.collection<Project>('projects',ref => ref.where('active','==',true).orderBy('order','asc'));    
+    return this.projectCollection.valueChanges();
+  }  
 
   getExperience(): Observable<Experience[]>{
-    return this.http.get<Experience[]>(environment.apiUrl + '/experience');
+    this.experienceCollection =  this.afs.collection<Experience>('experience',ref => ref.where('active','==',true).orderBy('order','asc'));
+    return this.experienceCollection.valueChanges();
   }
 
   getEducation(): Observable<Education[]>{
-    return this.http.get<Education[]>(environment.apiUrl + '/education');
+    this.educationCollection = this.afs.collection<Education>('education',ref => ref.where('active','==',true).orderBy('order','asc'))
+    return this.educationCollection.valueChanges();
   }
   getAbout(): Observable<About[]>{    
     this.aboutCollection = this.afs.collection<About>('about');

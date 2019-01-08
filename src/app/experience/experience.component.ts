@@ -27,7 +27,7 @@ export class ExperienceComponent implements OnInit {
   }
 
   setJobsByLanguage(lang: string){
-    this.db.getExperience().subscribe((jobs) => {      
+    this.db.getExperience().subscribe((jobs) => {            
       this.jobs = [];            
       jobs.forEach(job => {
         // Search de keys by language
@@ -43,6 +43,6 @@ export class ExperienceComponent implements OnInit {
         });
       })      
     });       
-  }
+  }  
 
 }

@@ -43,7 +43,7 @@ export class PortfolioComponent implements OnInit {
   } 
 
   setProjectsByLanguage(lang: string){
-    this.db.getProjects().subscribe((projects) => {
+    this.db.getProjects().subscribe((projects) => {            
       this.setChipsArray(projects,'types');
       this.setChipsArray(projects,'technologies');    
       this.technologies = this.orderArrayByName(this.technologies);
@@ -63,7 +63,7 @@ export class PortfolioComponent implements OnInit {
       })
       this.projectsBackup = this.projects;      
     });       
-  }
+  }  
 
   setChipsArray(projects: Project[],arrName: string){
    this[arrName] = [];

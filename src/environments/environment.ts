@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8080/api',
+  apiUrl: 'https://entropia.studio/cv',
   firebase: {
     apiKey: "AIzaSyAmXXVQxhxSeOeWt2hmb91DwKSA_Caw3pQ",
     authDomain: "curriculum-79208.firebaseapp.com",

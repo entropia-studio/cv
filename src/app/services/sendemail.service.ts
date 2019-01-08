@@ -17,7 +17,7 @@ export class SendemailService {
   ) { }
   
   sendEmail(mailObject: MailContact){
-    return this.http.post<MailContact>(environment.apiUrl + '/contact-form',mailObject,httpOptions);
+    return this.http.post<MailContact>(environment.apiUrl + '/sendemail.php',mailObject,httpOptions);
   }
 
 }

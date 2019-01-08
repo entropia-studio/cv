@@ -26,7 +26,7 @@ export class AcademicComponent implements OnInit {
   }
 
   setDegreesByLanguage(lang: string){
-    this.db.getEducation().subscribe((degrees) => {      
+    this.db.getEducation().subscribe((degrees) => {        
       this.degrees = [];            
       degrees.forEach(degree => {
         // Search de keys by language
@@ -42,6 +42,6 @@ export class AcademicComponent implements OnInit {
         });
       })      
     });       
-  }
+  } 
 
 }
