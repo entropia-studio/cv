@@ -1,7 +1,12 @@
 <app-hr [title]="langService.getTag('education',language,'')" id="education"></app-hr>
-<mat-card class="example-card" *ngFor="let degree of degrees" color="accent">
-  <mat-card-header>    
-    <mat-card-title>{{ degree.name[0].text}} - {{degree.school}}</mat-card-title>
-    <mat-card-subtitle>{{degree.period[0].text}}</mat-card-subtitle>
-  </mat-card-header>     
-</mat-card>
+<mat-expansion-panel class="my-panel" *ngFor="let degree of degrees">
+  <mat-expansion-panel-header>
+      <mat-panel-title>
+          <strong>{{ degree.name[0].text}} - {{degree.school}}</strong>           
+      </mat-panel-title>
+      <mat-panel-description>
+          <strong>{{degree.period[0].text}}</strong>
+      </mat-panel-description>
+  </mat-expansion-panel-header>    
+  <p [innerHTML]="degree.description[0].text"></p>        
+</mat-expansion-panel>

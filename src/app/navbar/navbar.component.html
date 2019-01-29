@@ -1,6 +1,6 @@
 <mat-toolbar color="primary" *ngIf="language">
   <mat-toolbar-row>  
-  <div class="m-button-row" appNavbarMenu minWidth="480">
+  <div class="m-button-row" appNavbarMenu minWidth="640">
     <button mat-button (click)="scrollToComponent('portfolio')"><mat-icon>insert_drive_file</mat-icon> {{langService.getTag('portfolio',language,'capitalize')}}</button>    
     <button mat-button (click)="scrollToComponent('about')"><mat-icon>face</mat-icon> {{langService.getTag('about',language,'capitalize')}}</button>    
     <button mat-button (click)="scrollToComponent('experience')"><mat-icon>timeline</mat-icon> {{langService.getTag('experience',language,'capitalize')}}</button>        
@@ -8,7 +8,7 @@
     <button mat-button (click)="scrollToComponent('contact')"><mat-icon>email</mat-icon> {{langService.getTag('contact',language,'capitalize')}}</button>                     
   </div>    
 
-  <button mat-icon-button [matMenuTriggerFor]="menu" appNavbarMenu maxWidth="479">
+  <button mat-icon-button [matMenuTriggerFor]="menu" appNavbarMenu maxWidth="639">
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
@@ -38,7 +38,7 @@
   <mat-slide-toggle
           class="slide-toggle"
           color="primary"          
-          (change)="setLanguage($event.checked)">
+          (change)="setLanguage($event.checked)" *ngIf="false">
         ENG
   </mat-slide-toggle>       
   <div class="d-flex flex-column">

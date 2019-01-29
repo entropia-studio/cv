@@ -1,6 +1,10 @@
 @import '~@angular/material/theming';
 
-.mat-card{
-    background-color: $dark-secondary-text;  
+.my-panel{
     margin-bottom: 1em;
+    background-color: $dark-secondary-text;      
 }
+
+.mat-expansion-panel-header-description, .mat-expansion-panel-header-title{
+    flex: 1 1 50%;            
+}   
