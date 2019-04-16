@@ -4,7 +4,7 @@
   </mat-card-title-group>    
   <mat-card-content>
     <div class="d-flex">      
-      <img src="../assets/{{data.project._id}}.png" class="col-image">      
+      <img src="./assets/{{data.project._id}}.png" class="col-image">      
       <span class="col-text">
           <strong>{{langService.getTag('project',data.language,'capitalize')}}</strong>: {{data.project.types.join(', ')}}<br/>
           <strong>{{langService.getTag('technologies',data.language,'capitalize')}}</strong>: {{data.project.technologies.join(', ')}}<br/>
